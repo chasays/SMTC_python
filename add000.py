@@ -21,10 +21,11 @@ localImage = Image.open(completePath)
 
 startDraw = ImageDraw.Draw(localImage)
 #Acquite pic's size, and make sure front to size
-fontSize = min(localImage.size) / 4
+fontSize = min(localImage.size)/4
 
-startFront = ImageFont.truetype(fontPath, fontSize, 0, "utf-8")
-startDraw.text((localImage.size[0]-fontSize, 0), randomNum, (255, 0 ,0), startFront)
+startFront = ImageFont.truetype(fontPath, fontSize)
+startDraw.text((localImage.size[0]-fontSize, 3), str(randomNum), fill=(255,0,0))
+localImage.save(filePath + '/' + "new.png", "jpeg")
 print fontSize
 
 
