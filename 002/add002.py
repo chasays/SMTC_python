@@ -8,7 +8,7 @@ def generateCode(number):
             f.write(str + '\n')
 def saveDataToSQL(data):
     try:
-        conn = MySQLdb.connect(host='localhost', user='root', passwd='ievjai', db='test', port=3306)
+        conn = MySQLdb.connect(host='localhost', user='root', passwd='ssssssdf', db='test', port=3306)
         cur = conn.cursor()
         for i in range(200):
             command = 'INSERT INTO code (code) VALUES (\'%s\')' % data[i].strip('\n')
