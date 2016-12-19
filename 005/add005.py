@@ -1,8 +1,12 @@
 import os
 
 from PIL import Image
+import sys
 
-Image
+ImRe = sys.path[0]
+ImDe = ImRe
+Name = '005'
+type = 'png'
 
 def processPicture(resource, dest, picName, imageType):
     imageType = 'jpep' if imageType == 'jpg' else 'png'
@@ -11,3 +15,14 @@ def processPicture(resource, dest, picName, imageType):
     if rate:
         im.thumbnail((im.size[0] / rate, im.size[1] / rate))
     im.save(dest + picName, imageType)
+
+def run():
+    os.chdir(ImRe)
+    for i in os.listdir(os.getcwd()):
+        postfix = os.path.splitext(i)[1]
+        if postfix == 'png' or postfix == 'jpg':
+            processPicture(ImRe, ImDe, Name, type)
+
+if __name__ == '__main__':
+    run()
+
